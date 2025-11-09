@@ -38,8 +38,8 @@ const ForgotPasswordPage = () => {
 
         <div className="bg-white rounded-xl shadow-lg p-8">
           <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FiMail className="text-primary-600" size={32} />
+            <div className="w-16 h-16 bg-[#fbe4ce] rounded-full flex items-center justify-center mx-auto mb-4">
+              <FiMail className="text-[#b7521d]" size={32} />
             </div>
             <h1 className="text-3xl font-display font-bold text-gray-900 mb-2">
               Forgot Password?
@@ -92,7 +92,7 @@ const ForgotPasswordPage = () => {
               </p>
               <button
                 onClick={() => setEmailSent(false)}
-                className="text-primary-600 hover:text-primary-700 font-medium"
+                className="text-[#8f5c35] hover:text-[#77492c] font-medium"
               >
                 Send Again
               </button>

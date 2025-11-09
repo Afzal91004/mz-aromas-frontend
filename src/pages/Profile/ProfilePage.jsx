@@ -25,7 +25,7 @@ const ProfilePage = () => {
                 <img
                   src={user?.avatar?.url || "/images/default-avatar.png"}
                   alt={user?.name}
-                  className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-primary-100"
+                  className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#f5efe8]"
                 />
                 <h2 className="font-semibold text-gray-900 text-xl">
                   {user?.name}
@@ -36,7 +36,7 @@ const ProfilePage = () => {
               <nav className="space-y-2">
                 <Link
                   to="/profile"
-                  className="flex items-center space-x-3 px-4 py-3 rounded-lg bg-primary-50 text-primary-700 font-medium"
+                  className="flex items-center space-x-3 px-4 py-3 rounded-lg bg-primary-50 text-accent-dark font-medium"
                 >
                   <FiUser />
                   <span>Profile</span>

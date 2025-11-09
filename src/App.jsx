@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { getUserProfile, setInitialized } from "./store/slices/authSlice";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -44,22 +45,54 @@ import UsersListPage from "./pages/Admin/UsersListPage";
 import CategoriesListPage from "./pages/Admin/CategoriesListPage";
 
 // Redux
-import { getUserProfile } from "./store/slices/authSlice";
 import { fetchWishlist } from "./store/slices/wishlistSlice";
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isAuthenticated, initialized } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    dispatch(getUserProfile());
-  }, [dispatch]);
+    const initializeAuth = async () => {
+      // Check if user data exists in localStorage
+      const storedUser = localStorage.getItem("user");
+      const storedToken = localStorage.getItem("token");
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      dispatch(fetchWishlist());
+      if (storedUser && storedToken) {
+        try {
+          // Verify session with server
+          await dispatch(getUserProfile()).unwrap();
+          console.log("✅ Session verified successfully");
+        } catch (error) {
+          console.error("❌ Session verification failed:", error);
+          // Clear invalid session data
+          localStorage.removeItem("user");
+          localStorage.removeItem("token");
+        }
+      }
+
+      // Mark as initialized even if not authenticated
+      dispatch(setInitialized());
+    };
+
+    // Only run once on mount
+    if (!initialized) {
+      initializeAuth();
     }
-  }, [isAuthenticated, dispatch]);
+  }, [dispatch, initialized]);
+
+  // Show loading screen while initializing
+  if (!initialized) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-16 w-16 border-b-2 border-[#b7521d]"></div>
+          <p className="mt-4 text-xl text-gray-600 font-display">
+            Loading MZ Aromas...
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <Router>
@@ -89,7 +122,8 @@ function App() {
           element={
             <div className="flex flex-col min-h-screen">
               <Navbar />
-              <main className="flex-grow">
+              {/* container ensures consistent outer padding for all pages */}
+              <main className="flex-grow container mx-auto px-4">
                 <Routes>
                   {/* Public Routes */}
                   <Route path="/" element={<HomePage />} />
@@ -210,6 +244,6 @@ function App() {
       />
     </Router>
   );
-}
+};
 
 export default App;

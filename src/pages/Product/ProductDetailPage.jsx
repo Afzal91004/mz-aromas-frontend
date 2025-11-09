@@ -64,7 +64,7 @@ const ProductDetailPage = () => {
     return (
       <div className="container mx-auto px-4 py-16">
         <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-primary-600"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#8f5c35]"></div>
         </div>
       </div>
     );
@@ -140,17 +140,17 @@ const ProductDetailPage = () => {
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link to="/" className="hover:text-primary-600">
+            <Link to="/" className="hover:text-[#b7521d]">
               Home
             </Link>
             <span>/</span>
-            <Link to="/products" className="hover:text-primary-600">
+            <Link to="/products" className="hover:text-[#b7521d]">
               Products
             </Link>
             <span>/</span>
             <Link
               to={`/products?category=${product.category?.slug}`}
-              className="hover:text-primary-600"
+              className="hover:text-[#b7521d]"
             >
               {product.category?.name}
             </Link>
@@ -198,7 +198,7 @@ const ProductDetailPage = () => {
                     <img
                       src={image.url}
                       alt={`Thumbnail ${index + 1}`}
-                      className="w-full h-24 object-cover rounded-lg border-2 border-transparent hover:border-primary-600"
+                      className="w-full h-24 object-cover rounded-lg border-2 border-transparent hover:border-[#8f5c35]"
                     />
                   </SwiperSlide>
                 ))}
@@ -212,7 +212,7 @@ const ProductDetailPage = () => {
                 className={`flex-1 py-3 rounded-lg font-semibold border-2 transition-colors ${
                   isInWishlist
                     ? "bg-red-50 border-red-500 text-red-600"
-                    : "bg-white border-gray-300 text-gray-700 hover:border-primary-600"
+                    : "bg-white border-gray-300 text-gray-700 hover:border-[#b7521d]"
                 }`}
               >
                 <FiHeart
@@ -223,7 +223,7 @@ const ProductDetailPage = () => {
               </button>
               <button
                 onClick={handleShare}
-                className="px-6 py-3 rounded-lg font-semibold border-2 border-gray-300 text-gray-700 hover:border-primary-600 transition-colors"
+                className="px-6 py-3 rounded-lg font-semibold border-2 border-gray-300 text-gray-700 hover:border-[#b7521d] transition-colors"
               >
                 <FiShare2 className="inline" />
               </button>
@@ -236,7 +236,7 @@ const ProductDetailPage = () => {
               {/* Category */}
               <Link
                 to={`/products?category=${product.category?.slug}`}
-                className="inline-block text-sm text-primary-600 hover:text-primary-700 font-semibold uppercase tracking-wide mb-2"
+                className="inline-block text-sm text-[#b7521d] hover:text-[#8f3c19] font-semibold uppercase tracking-wide mb-2"
               >
                 {product.category?.name}
               </Link>
@@ -269,7 +269,7 @@ const ProductDetailPage = () => {
               {/* Price */}
               <div className="mb-6">
                 <div className="flex items-baseline space-x-3 mb-2">
-                  <span className="text-4xl font-bold text-primary-700">
+                  <span className="text-4xl font-bold text-[#8f3c19]">
                     ₹{displayPrice}
                   </span>
                   {discount > 0 && (
@@ -305,10 +305,10 @@ const ProductDetailPage = () => {
                         disabled={variant.stock === 0}
                         className={`p-3 rounded-lg border-2 font-semibold transition-all ${
                           selectedVariant?._id === variant._id
-                            ? "border-primary-600 bg-primary-50 text-primary-700"
+                            ? "border-[#8f5c35] bg-[#faf7f4] text-[#77492c]"
                             : variant.stock === 0
                             ? "border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed"
-                            : "border-gray-300 hover:border-primary-600"
+                            : "border-gray-300 hover:border-[#b7521d]"
                         }`}
                       >
                         <div className="text-sm">{variant.size}</div>
@@ -332,7 +332,7 @@ const ProductDetailPage = () => {
                   <h3 className="font-semibold text-gray-900 mb-2">
                     Fragrance Type:
                   </h3>
-                  <span className="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full font-medium">
+                  <span className="inline-block bg-[#f5efe8] text-[#77492c] px-4 py-2 rounded-full font-medium">
                     {product.fragrance}
                   </span>
                 </div>
@@ -379,14 +379,14 @@ const ProductDetailPage = () => {
               {/* Features */}
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-lg">
-                  <FiTruck className="text-primary-600" size={24} />
+                  <FiTruck className="text-[#b7521d]" size={24} />
                   <div className="text-sm">
                     <div className="font-semibold">Free Delivery</div>
                     <div className="text-gray-600">On orders above ₹999</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-lg">
-                  <FiShield className="text-primary-600" size={24} />
+                  <FiShield className="text-[#b7521d]" size={24} />
                   <div className="text-sm">
                     <div className="font-semibold">Secure Payment</div>
                     <div className="text-gray-600">100% Protected</div>
@@ -405,7 +405,7 @@ const ProductDetailPage = () => {
                 onClick={() => setActiveTab("description")}
                 className={`pb-4 font-semibold transition-colors ${
                   activeTab === "description"
-                    ? "border-b-2 border-primary-600 text-primary-600"
+                    ? "border-b-2 border-[#8f5c35] text-[#8f5c35]"
                     : "text-gray-600 hover:text-gray-900"
                 }`}
               >
@@ -415,7 +415,7 @@ const ProductDetailPage = () => {
                 onClick={() => setActiveTab("ingredients")}
                 className={`pb-4 font-semibold transition-colors ${
                   activeTab === "ingredients"
-                    ? "border-b-2 border-primary-600 text-primary-600"
+                    ? "border-b-2 border-[#8f5c35] text-[#8f5c35]"
                     : "text-gray-600 hover:text-gray-900"
                 }`}
               >
@@ -425,7 +425,7 @@ const ProductDetailPage = () => {
                 onClick={() => setActiveTab("howToUse")}
                 className={`pb-4 font-semibold transition-colors ${
                   activeTab === "howToUse"
-                    ? "border-b-2 border-primary-600 text-primary-600"
+                    ? "border-b-2 border-[#8f5c35] text-[#8f5c35]"
                     : "text-gray-600 hover:text-gray-900"
                 }`}
               >
@@ -435,7 +435,7 @@ const ProductDetailPage = () => {
                 onClick={() => setActiveTab("reviews")}
                 className={`pb-4 font-semibold transition-colors ${
                   activeTab === "reviews"
-                    ? "border-b-2 border-primary-600 text-primary-600"
+                    ? "border-b-2 border-[#b7521d] text-[#b7521d]"
                     : "text-gray-600 hover:text-gray-900"
                 }`}
               >

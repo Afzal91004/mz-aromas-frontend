@@ -52,7 +52,7 @@ const Navbar = () => {
       }`}
     >
       {/* Top Bar */}
-      <div className="bg-primary-700 text-white py-2">
+      <div className="bg-[#8f3c19]  text-white py-2">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-4">
@@ -73,7 +73,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="text-3xl font-display font-bold text-primary-700">
+            <div className="text-3xl font-display font-bold text-[#8f3c19]">
               MZ <span className="text-accent-600">Aromas</span>
             </div>
           </Link>
@@ -89,11 +89,11 @@ const Navbar = () => {
                 placeholder="Search for Attar, Agarbatti, Soaps..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex-1 px-4 py-3 border-2 border-r-0 border-primary-300 rounded-l-lg focus:outline-none focus:border-primary-600"
+                className="flex-1 px-4 py-3 border-2 border-r-0 border-[#dbc5a6] rounded-l-lg focus:outline-none focus:border-[#8f5c35]"
               />
               <button
                 type="submit"
-                className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-r-lg transition-colors"
+                className="bg-[#8f5c35] hover:bg-[#77492c] text-white px-6 py-3 rounded-r-lg transition-colors"
               >
                 <FiSearch size={20} />
               </button>
@@ -105,7 +105,7 @@ const Navbar = () => {
             {/* Wishlist */}
             <Link
               to="/wishlist"
-              className="relative hover:text-primary-600 transition-colors"
+              className="relative hover:text-[#8f5c35] transition-colors"
             >
               <FiHeart size={24} />
               {wishlistItems.length > 0 && (
@@ -118,11 +118,11 @@ const Navbar = () => {
             {/* Cart */}
             <Link
               to="/cart"
-              className="relative hover:text-primary-600 transition-colors"
+              className="relative hover:text-[#8f5c35] transition-colors"
             >
               <FiShoppingCart size={24} />
               {cartItems.length > 0 && (
-                <span className="absolute -top-2 -right-2 bg-primary-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-[#8f5c35] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                   {cartItems.length}
                 </span>
               )}
@@ -130,7 +130,7 @@ const Navbar = () => {
 
             {/* User Menu */}
             <div className="relative group">
-              <button className="hover:text-primary-600 transition-colors">
+              <button className="hover:text-[#8f5c35] transition-colors">
                 <FiUser size={24} />
               </button>
 
@@ -202,11 +202,11 @@ const Navbar = () => {
               placeholder="Search products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-1 px-4 py-2 border-2 border-r-0 border-primary-300 rounded-l-lg focus:outline-none focus:border-primary-600"
+              className="flex-1 px-4 py-2 border-2 border-r-0 border-[#dbc5a6] rounded-l-lg focus:outline-none focus:border-[#8f5c35]"
             />
             <button
               type="submit"
-              className="bg-primary-600 text-white px-4 rounded-r-lg"
+              className="bg-[#b7521d] text-white px-4 rounded-r-lg"
             >
               <FiSearch size={20} />
             </button>
@@ -220,43 +220,43 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8 py-3">
             <Link
               to="/products?category=attar"
-              className="hover:text-primary-600 transition-colors font-medium"
+              className="hover:text-[#b7521d] transition-colors font-medium"
             >
               Attar
             </Link>
             <Link
               to="/products?category=agarbatti"
-              className="hover:text-primary-600 transition-colors font-medium"
+              className="hover:text-[#b7521d] transition-colors font-medium"
             >
               Agarbatti
             </Link>
             <Link
               to="/products?category=soap"
-              className="hover:text-primary-600 transition-colors font-medium"
+              className="hover:text-[#b7521d] transition-colors font-medium"
             >
               Soaps
             </Link>
             <Link
               to="/products?category=essential-oils"
-              className="hover:text-primary-600 transition-colors font-medium"
+              className="hover:text-[#b7521d] transition-colors font-medium"
             >
               Essential Oils
             </Link>
             <Link
               to="/products?category=dhoop"
-              className="hover:text-primary-600 transition-colors font-medium"
+              className="hover:text-[#b7521d] transition-colors font-medium"
             >
               Dhoop
             </Link>
             <Link
               to="/products?category=gift-sets"
-              className="hover:text-primary-600 transition-colors font-medium"
+              className="hover:text-[#b7521d] transition-colors font-medium"
             >
               Gift Sets
             </Link>
             <Link
               to="/products"
-              className="hover:text-primary-600 transition-colors font-medium text-accent-600"
+              className="hover:text-[#8f5c35] transition-colors font-medium text-accent-600"
             >
               View All
             </Link>
@@ -270,29 +270,29 @@ const Navbar = () => {
           <div className="container mx-auto px-4 py-4 space-y-2">
             <Link
               to="/products?category=attar"
-              className="block py-2 hover:text-primary-600"
+              className="block py-2 hover:text-[#b7521d]"
             >
               Attar
             </Link>
             <Link
               to="/products?category=agarbatti"
-              className="block py-2 hover:text-primary-600"
+              className="block py-2 hover:text-[#b7521d]"
             >
               Agarbatti
             </Link>
             <Link
               to="/products?category=soap"
-              className="block py-2 hover:text-primary-600"
+              className="block py-2 hover:text-[#b7521d]"
             >
               Soaps
             </Link>
             <Link
               to="/products?category=essential-oils"
-              className="block py-2 hover:text-primary-600"
+              className="block py-2 hover:text-[#b7521d]"
             >
               Essential Oils
             </Link>
-            <Link to="/products" className="block py-2 hover:text-primary-600">
+            <Link to="/products" className="block py-2 hover:text-[#b7521d]">
               View All Products
             </Link>
           </div>

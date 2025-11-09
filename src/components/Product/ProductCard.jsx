@@ -105,7 +105,7 @@ const ProductCard = ({ product }) => {
           <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/70 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
             <button
               onClick={handleAddToCart}
-              className="w-full bg-white text-primary-700 py-2 rounded-lg font-semibold hover:bg-primary-50 transition-colors flex items-center justify-center space-x-2"
+              className="w-full bg-white text-[#8f3c19] py-2 rounded-lg font-semibold hover:bg-[#fdf4ec] transition-colors flex items-center justify-center space-x-2"
             >
               <FiShoppingCart />
               <span>
@@ -118,7 +118,7 @@ const ProductCard = ({ product }) => {
         {/* Product Info */}
         <div className="p-4">
           {/* Category */}
-          <p className="text-xs text-primary-600 font-semibold uppercase tracking-wide mb-1">
+          <p className="text-xs text-[#b7521d] font-semibold uppercase tracking-wide mb-1">
             {product.category?.name}
           </p>
 
@@ -142,7 +142,7 @@ const ProductCard = ({ product }) => {
 
           {/* Price */}
           <div className="flex items-baseline space-x-2">
-            <span className="text-2xl font-bold text-primary-700">
+            <span className="text-2xl font-bold text-[#8f3c19]">
               ₹{displayPrice}
             </span>
             {discount > 0 && (

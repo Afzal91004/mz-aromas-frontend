@@ -486,7 +486,7 @@ const CreateProductPage = () => {
                     name="featured"
                     checked={formData.featured}
                     onChange={handleChange}
-                    className="w-5 h-5 text-primary-600 rounded"
+                    className="w-5 h-5 text-[#b7521d] rounded"
                   />
                   <span className="text-gray-700">Featured Product</span>
                 </label>
@@ -497,7 +497,7 @@ const CreateProductPage = () => {
                     name="isActive"
                     checked={formData.isActive}
                     onChange={handleChange}
-                    className="w-5 h-5 text-primary-600 rounded"
+                    className="w-5 h-5 text-[#b7521d] rounded"
                   />
                   <span className="text-gray-700">Active Status</span>
                 </label>

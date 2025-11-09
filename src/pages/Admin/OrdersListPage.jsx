@@ -38,15 +38,15 @@ const OrdersListPage = () => {
   const getStatusColor = (status) => {
     switch (status) {
       case "Processing":
-        return "bg-yellow-100 text-yellow-800";
+        return "bg-yellow-100 text-yellow-800 border-yellow-200";
       case "Shipped":
-        return "bg-blue-100 text-blue-800";
+        return "bg-blue-100 text-blue-800 border-blue-200";
       case "Delivered":
-        return "bg-green-100 text-green-800";
+        return "bg-green-100 text-green-800 border-green-200";
       case "Cancelled":
-        return "bg-red-100 text-red-800";
+        return "bg-red-100 text-red-800 border-red-200";
       default:
-        return "bg-gray-100 text-gray-800";
+        return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
 
@@ -58,13 +58,13 @@ const OrdersListPage = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-primary-600"></div>
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#8f3c19]"></div>
       </div>
     );
   }
 
   return (
-    <div>
+    <div className="space-y-6">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-display font-bold text-gray-900 mb-2">
@@ -74,16 +74,16 @@ const OrdersListPage = () => {
       </div>
 
       {/* Filters */}
-      <div className="bg-white rounded-xl shadow-sm p-4 mb-6">
+      <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
         <div className="flex flex-wrap gap-3">
           {["all", "Processing", "Shipped", "Delivered", "Cancelled"].map(
             (status) => (
               <button
                 key={status}
                 onClick={() => setFilter(status)}
-                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                className={`px-5 py-2.5 rounded-lg font-semibold transition-all duration-200 ${
                   filter === status
-                    ? "bg-primary-600 text-white"
+                    ? "bg-gradient-to-r from-[#8f3c19] to-[#6d2f15] text-white shadow-md"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
@@ -95,10 +95,10 @@ const OrdersListPage = () => {
       </div>
 
       {/* Orders Table */}
-      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+      <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-gray-50 border-b border-gray-200">
+            <thead className="bg-gradient-to-r from-[#fdf4ec] to-white border-b-2 border-[#e8dac7]">
               <tr>
                 <th className="text-left py-4 px-6 text-sm font-semibold text-gray-700">
                   Order ID
@@ -130,10 +130,10 @@ const OrdersListPage = () => {
               {filteredOrders.map((order) => (
                 <tr
                   key={order._id}
-                  className="border-b border-gray-100 hover:bg-gray-50"
+                  className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
                 >
                   <td className="py-4 px-6">
-                    <span className="font-medium text-gray-900">
+                    <span className="font-semibold text-gray-900">
                       #{order._id.slice(-8)}
                     </span>
                   </td>
@@ -147,20 +147,22 @@ const OrdersListPage = () => {
                       </p>
                     </div>
                   </td>
-                  <td className="py-4 px-6 text-gray-700">
-                    {order.orderItems.length} items
+                  <td className="py-4 px-6">
+                    <span className="text-gray-700 font-medium">
+                      {order.orderItems.length} items
+                    </span>
                   </td>
                   <td className="py-4 px-6">
-                    <p className="font-semibold text-gray-900">
-                      ₹{order.totalPrice}
+                    <p className="font-bold text-gray-900">
+                      ₹{order.totalPrice.toLocaleString()}
                     </p>
                   </td>
                   <td className="py-4 px-6">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold ${
                         order.paymentInfo.type === "COD"
-                          ? "bg-orange-100 text-orange-800"
-                          : "bg-green-100 text-green-800"
+                          ? "bg-orange-100 text-orange-800 border border-orange-200"
+                          : "bg-green-100 text-green-800 border border-green-200"
                       }`}
                     >
                       {order.paymentInfo.type}
@@ -172,7 +174,7 @@ const OrdersListPage = () => {
                       onChange={(e) =>
                         handleStatusUpdate(order._id, e.target.value)
                       }
-                      className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold border cursor-pointer ${getStatusColor(
                         order.orderStatus
                       )}`}
                     >
@@ -182,15 +184,20 @@ const OrdersListPage = () => {
                       <option value="Cancelled">Cancelled</option>
                     </select>
                   </td>
-                  <td className="py-4 px-6 text-gray-600 text-sm">
-                    {new Date(order.createdAt).toLocaleDateString()}
+                  <td className="py-4 px-6 text-gray-600 text-sm font-medium">
+                    {new Date(order.createdAt).toLocaleDateString("en-IN", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    })}
                   </td>
                   <td className="py-4 px-6">
                     <Link
                       to={`/admin/orders/${order._id}`}
-                      className="text-blue-600 hover:text-blue-700"
+                      className="inline-flex items-center justify-center p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                      title="View Details"
                     >
-                      <FiEye size={18} />
+                      <FiEye size={20} />
                     </Link>
                   </td>
                 </tr>

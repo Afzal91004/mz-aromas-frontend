@@ -89,9 +89,9 @@ const UpdateProfilePage = () => {
                   <img
                     src={avatarPreview}
                     alt="Avatar Preview"
-                    className="w-32 h-32 rounded-full object-cover border-4 border-primary-100"
+                    className="w-32 h-32 rounded-full object-cover border-4 border-[#f5efe8]"
                   />
-                  <label className="absolute bottom-0 right-0 bg-primary-600 text-white p-3 rounded-full cursor-pointer hover:bg-primary-700 transition-colors">
+                  <label className="absolute bottom-0 right-0 bg-accent text-white p-3 rounded-full cursor-pointer hover:bg-accent-dark transition-colors">
                     <FiCamera size={20} />
                     <input
                       type="file"

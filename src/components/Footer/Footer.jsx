@@ -31,7 +31,7 @@ const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary-400 transition-colors"
+                className="hover:text-[#e9893c] transition-colors"
               >
                 <FiFacebook size={20} />
               </a>
@@ -39,7 +39,7 @@ const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary-400 transition-colors"
+                className="hover:text-[#e9893c] transition-colors"
               >
                 <FiInstagram size={20} />
               </a>
@@ -47,7 +47,7 @@ const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary-400 transition-colors"
+                className="hover:text-[#e9893c] transition-colors"
               >
                 <FiTwitter size={20} />
               </a>
@@ -55,7 +55,7 @@ const Footer = () => {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary-400 transition-colors"
+                className="hover:text-[#e9893c] transition-colors"
               >
                 <FiYoutube size={20} />
               </a>
@@ -71,7 +71,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/about"
-                  className="hover:text-primary-400 transition-colors"
+                  className="hover:text-[#e9893c] transition-colors"
                 >
                   About Us
                 </Link>
@@ -79,7 +79,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/products"
-                  className="hover:text-primary-400 transition-colors"
+                  className="hover:text-[#e9893c] transition-colors"
                 >
                   All Products
                 </Link>
@@ -87,7 +87,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="hover:text-primary-400 transition-colors"
+                  className="hover:text-[#e9893c] transition-colors"
                 >
                   Contact Us
                 </Link>
@@ -95,7 +95,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/bulk-order"
-                  className="hover:text-primary-400 transition-colors"
+                  className="hover:text-[#e9893c] transition-colors"
                 >
                   Bulk Orders
                 </Link>
@@ -112,7 +112,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/shipping-policy"
-                  className="hover:text-primary-400 transition-colors"
+                  className="hover:text-[#e9893c] transition-colors"
                 >
                   Shipping Policy
                 </Link>
@@ -120,7 +120,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/return-policy"
-                  className="hover:text-primary-400 transition-colors"
+                  className="hover:text-[#e9893c] transition-colors"
                 >
                   Return Policy
                 </Link>
@@ -128,7 +128,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/privacy-policy"
-                  className="hover:text-primary-400 transition-colors"
+                  className="hover:text-[#e9893c] transition-colors"
                 >
                   Privacy Policy
                 </Link>
@@ -136,7 +136,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/terms"
-                  className="hover:text-primary-400 transition-colors"
+                  className="hover:text-[#e9893c] transition-colors"
                 >
                   Terms & Conditions
                 </Link>

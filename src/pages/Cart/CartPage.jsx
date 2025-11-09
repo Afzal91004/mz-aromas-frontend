@@ -74,7 +74,7 @@ const CartPage = () => {
           </p>
           <Link
             to="/products"
-            className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            className="inline-block btn-primary px-8 py-3 rounded-lg"
           >
             Continue Shopping
           </Link>
@@ -130,7 +130,7 @@ const CartPage = () => {
                         <div>
                           <Link
                             to={`/product/${item.product.slug}`}
-                            className="font-semibold text-gray-900 hover:text-primary-600 transition-colors"
+                            className="font-semibold text-gray-900 hover:text-[#b7521d] transition-colors"
                           >
                             {item.product.name}
                           </Link>
@@ -158,7 +158,7 @@ const CartPage = () => {
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-4">
                         <div>
                           <div className="flex items-baseline space-x-2">
-                            <span className="text-2xl font-bold text-primary-700">
+                            <span className="text-2xl font-bold text-[#8f3c19]">
                               ₹{price}
                             </span>
                             {price < originalPrice && (
@@ -253,7 +253,7 @@ const CartPage = () => {
                     <span className="text-lg font-semibold text-gray-900">
                       Total
                     </span>
-                    <span className="text-2xl font-bold text-primary-700">
+                    <span className="text-2xl font-bold text-[#8f3c19]">
                       ₹{total}
                     </span>
                   </div>
@@ -268,10 +268,7 @@ const CartPage = () => {
                 <span>Proceed to Checkout</span>
               </button>
 
-              <Link
-                to="/products"
-                className="block text-center text-primary-600 hover:text-primary-700 font-semibold mt-4 transition-colors"
-              >
+              <Link to="/products" className="w-full btn-secondary mt-4">
                 Continue Shopping
               </Link>
 

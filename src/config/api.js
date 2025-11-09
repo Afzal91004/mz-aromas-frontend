@@ -15,7 +15,15 @@ const API = axios.create({
 // Request interceptor - Har request se pehle
 API.interceptors.request.use(
   (config) => {
-    console.log(`📤 API Request: ${config.method.toUpperCase()} ${config.url}`);
+    // Attach bearer token from localStorage (fallback if cookie missing)
+    const token = localStorage.getItem("token");
+    if (token && config.headers) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    console.log(
+      `📤 API Request: ${config.method?.toUpperCase()} ${config.url}`
+    );
     return config;
   },
   (error) => {

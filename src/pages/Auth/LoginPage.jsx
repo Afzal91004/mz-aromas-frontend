@@ -50,12 +50,12 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-accent-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#fdf4ec] to-accent-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-block mb-6">
-            <h1 className="text-4xl font-display font-bold text-primary-700">
+            <h1 className="text-4xl font-display font-bold text-[#8f3c19]">
               MZ <span className="text-accent-600">Aromas</span>
             </h1>
           </Link>
@@ -93,7 +93,7 @@ const LoginPage = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d96e26] focus:border-[#d96e26] transition-colors"
                   placeholder="your@email.com"
                   required
                   autoComplete="email"
@@ -119,7 +119,7 @@ const LoginPage = () => {
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d96e26] focus:border-[#d96e26] transition-colors"
                   placeholder="••••••••"
                   required
                   autoComplete="current-password"
@@ -127,7 +127,7 @@ const LoginPage = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center hover:text-primary-600 transition-colors"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center hover:text-[#b7521d] transition-colors"
                 >
                   {showPassword ? (
                     <FiEyeOff className="text-gray-400" size={20} />
@@ -142,7 +142,7 @@ const LoginPage = () => {
             <div className="flex justify-end">
               <Link
                 to="/forgot-password"
-                className="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors"
+                className="text-sm text-[#b7521d] hover:text-[#8f3c19] font-medium transition-colors"
               >
                 Forgot Password?
               </Link>
@@ -152,7 +152,7 @@ const LoginPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-4 rounded-lg font-semibold hover:from-primary-700 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              className="w-full bg-gradient-to-r from-[#b7521d] to-[#8f3c19] text-white py-3 px-4 rounded-lg font-semibold hover:from-[#8f3c19] hover:to-[#6c2f18] focus:outline-none focus:ring-2 focus:ring-[#d96e26] focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {loading ? (
                 <>
@@ -201,7 +201,7 @@ const LoginPage = () => {
             <div className="mt-6">
               <Link
                 to="/register"
-                className="w-full border-2 border-primary-600 text-primary-600 py-3 px-4 rounded-lg font-semibold hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all text-center block"
+                className="w-full border-2 border-[#b7521d] text-[#b7521d] py-3 px-4 rounded-lg font-semibold hover:bg-[#fdf4ec] focus:outline-none focus:ring-2 focus:ring-[#d96e26] focus:ring-offset-2 transition-all text-center block"
               >
                 Create Account
               </Link>
@@ -212,11 +212,11 @@ const LoginPage = () => {
         {/* Terms */}
         <p className="text-center text-xs text-gray-600 mt-6">
           By logging in, you agree to our{" "}
-          <Link to="/terms" className="text-primary-600 hover:underline">
+          <Link to="/terms" className="text-[#b7521d] hover:underline">
             Terms of Service
           </Link>{" "}
           and{" "}
-          <Link to="/privacy" className="text-primary-600 hover:underline">
+          <Link to="/privacy" className="text-[#b7521d] hover:underline">
             Privacy Policy
           </Link>
         </p>

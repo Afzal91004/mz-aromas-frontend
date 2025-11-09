@@ -48,10 +48,7 @@ const WishlistPage = () => {
           <p className="text-gray-600 mb-8">
             Please login to see your saved products
           </p>
-          <Link
-            to="/login"
-            className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-          >
+          <Link to="/login" className="inline-block btn-primary px-8 py-3">
             Login Now
           </Link>
         </div>
@@ -63,7 +60,7 @@ const WishlistPage = () => {
     return (
       <div className="container mx-auto px-4 py-16">
         <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-primary-600"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-accent"></div>
         </div>
       </div>
     );
@@ -80,10 +77,7 @@ const WishlistPage = () => {
           <p className="text-gray-600 mb-8">
             Save your favorite products for later
           </p>
-          <Link
-            to="/products"
-            className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-          >
+          <Link to="/products" className="inline-block btn-primary px-8 py-3">
             Explore Products
           </Link>
         </div>
@@ -149,14 +143,14 @@ const WishlistPage = () => {
                   </div>
 
                   <div className="p-4">
-                    <p className="text-xs text-primary-600 font-semibold uppercase tracking-wide mb-1">
+                    <p className="text-xs text-accent font-semibold uppercase tracking-wide mb-1">
                       {product.category?.name}
                     </p>
                     <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 h-12">
                       {product.name}
                     </h3>
                     <div className="flex items-baseline space-x-2 mb-3">
-                      <span className="text-2xl font-bold text-primary-700">
+                      <span className="text-2xl font-bold text-accent-dark">
                         ₹{displayPrice}
                       </span>
                       {discount > 0 && (
@@ -171,7 +165,7 @@ const WishlistPage = () => {
                         e.preventDefault();
                         handleAddToCart(item);
                       }}
-                      className="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2"
+                      className="w-full btn-primary py-2 flex items-center justify-center space-x-2"
                     >
                       <FiShoppingCart />
                       <span>Add to Cart</span>

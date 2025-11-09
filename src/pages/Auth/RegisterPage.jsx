@@ -103,12 +103,12 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-accent-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#fdf4ec] to-accent-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-block mb-6">
-            <h1 className="text-4xl font-display font-bold text-primary-700">
+            <h1 className="text-4xl font-display font-bold text-[#8f3c19]">
               MZ <span className="text-accent-600">Aromas</span>
             </h1>
           </Link>
@@ -136,11 +136,11 @@ const RegisterPage = () => {
                 <img
                   src={avatarPreview}
                   alt="Avatar Preview"
-                  className="w-24 h-24 rounded-full object-cover border-4 border-primary-100 shadow-lg"
+                  className="w-24 h-24 rounded-full object-cover border-4 border-[#f5efe8] shadow-lg"
                 />
                 <label
                   htmlFor="avatar-upload"
-                  className="absolute bottom-0 right-0 bg-primary-600 text-white p-2 rounded-full cursor-pointer hover:bg-primary-700 transition-colors shadow-lg"
+                  className="absolute bottom-0 right-0 bg-[#8f5c35] text-white p-2 rounded-full cursor-pointer hover:bg-[#77492c] transition-colors shadow-lg"
                 >
                   <FiCamera size={16} />
                   <input
@@ -172,7 +172,7 @@ const RegisterPage = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a77142] focus:border-[#a77142] transition-colors"
                   placeholder="John Doe"
                   minLength="4"
                   required
@@ -199,7 +199,7 @@ const RegisterPage = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a77142] focus:border-[#a77142] transition-colors"
                   placeholder="your@email.com"
                   required
                   autoComplete="email"
@@ -225,7 +225,7 @@ const RegisterPage = () => {
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a77142] focus:border-[#a77142] transition-colors"
                   placeholder="••••••••"
                   minLength="8"
                   required
@@ -234,7 +234,7 @@ const RegisterPage = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center hover:text-primary-600 transition-colors"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center hover:text-[#b7521d] transition-colors"
                 >
                   {showPassword ? (
                     <FiEyeOff className="text-gray-400" size={20} />
@@ -263,7 +263,7 @@ const RegisterPage = () => {
                   name="confirmPassword"
                   value={formData.confirmPassword}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a77142] focus:border-[#a77142] transition-colors"
                   placeholder="••••••••"
                   required
                   autoComplete="new-password"
@@ -271,7 +271,7 @@ const RegisterPage = () => {
                 <button
                   type="button"
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center hover:text-primary-600 transition-colors"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center hover:text-[#b7521d] transition-colors"
                 >
                   {showConfirmPassword ? (
                     <FiEyeOff className="text-gray-400" size={20} />
@@ -286,7 +286,7 @@ const RegisterPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-4 rounded-lg font-semibold hover:from-primary-700 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              className="w-full bg-gradient-to-r from-[#8f5c35] to-[#77492c] text-white py-3 px-4 rounded-lg font-semibold hover:from-[#77492c] hover:to-[#5f3a25] focus:outline-none focus:ring-2 focus:ring-[#a77142] focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {loading ? (
                 <>
@@ -335,7 +335,7 @@ const RegisterPage = () => {
             <div className="mt-6">
               <Link
                 to="/login"
-                className="w-full border-2 border-primary-600 text-primary-600 py-3 px-4 rounded-lg font-semibold hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all text-center block"
+                className="w-full border-2 border-[#8f5c35] text-[#8f5c35] py-3 px-4 rounded-lg font-semibold hover:bg-[#faf7f4] focus:outline-none focus:ring-2 focus:ring-[#a77142] focus:ring-offset-2 transition-all text-center block"
               >
                 Login
               </Link>
@@ -346,11 +346,11 @@ const RegisterPage = () => {
         {/* Terms */}
         <p className="text-center text-xs text-gray-600 mt-6">
           By creating an account, you agree to our{" "}
-          <Link to="/terms" className="text-primary-600 hover:underline">
+          <Link to="/terms" className="text-[#8f5c35] hover:underline">
             Terms of Service
           </Link>{" "}
           and{" "}
-          <Link to="/privacy" className="text-primary-600 hover:underline">
+          <Link to="/privacy" className="text-[#8f5c35] hover:underline">
             Privacy Policy
           </Link>
         </p>

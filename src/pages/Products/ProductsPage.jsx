@@ -159,7 +159,7 @@ const ProductsPage = () => {
                           onChange={() =>
                             handleFilterChange("category", category.slug)
                           }
-                          className="w-4 h-4 text-primary-600"
+                          className="w-4 h-4 text-accent"
                         />
                         <span className="ml-2 text-gray-700">
                           {category.name}
@@ -169,7 +169,7 @@ const ProductsPage = () => {
                     {filters.category && (
                       <button
                         onClick={() => handleFilterChange("category", "")}
-                        className="text-sm text-primary-600 hover:text-primary-700"
+                        className="text-sm text-accent hover:text-accent-dark"
                       >
                         View All
                       </button>
@@ -190,7 +190,7 @@ const ProductsPage = () => {
                       onChange={(e) =>
                         handleFilterChange("minPrice", e.target.value)
                       }
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a77142]"
                     />
                     <input
                       type="number"
@@ -199,7 +199,7 @@ const ProductsPage = () => {
                       onChange={(e) =>
                         handleFilterChange("maxPrice", e.target.value)
                       }
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a77142]"
                     />
                   </div>
                 </div>
@@ -222,7 +222,7 @@ const ProductsPage = () => {
                           onChange={() =>
                             handleFilterChange("fragrance", fragrance)
                           }
-                          className="w-4 h-4 text-primary-600"
+                          className="w-4 h-4 text-accent"
                         />
                         <span className="ml-2 text-gray-700">{fragrance}</span>
                       </label>
@@ -230,7 +230,7 @@ const ProductsPage = () => {
                     {filters.fragrance && (
                       <button
                         onClick={() => handleFilterChange("fragrance", "")}
-                        className="text-sm text-primary-600 hover:text-primary-700"
+                        className="text-sm text-accent hover:text-accent-dark"
                       >
                         Clear
                       </button>
@@ -256,7 +256,7 @@ const ProductsPage = () => {
                           onChange={() =>
                             handleFilterChange("ratings", rating.toString())
                           }
-                          className="w-4 h-4 text-primary-600"
+                          className="w-4 h-4 text-accent"
                         />
                         <span className="ml-2 text-gray-700 flex items-center">
                           {rating}
@@ -275,7 +275,7 @@ const ProductsPage = () => {
           <div className="flex-1">
             {loading ? (
               <div className="flex justify-center items-center h-64">
-                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-primary-600"></div>
+                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#8f5c35]"></div>
               </div>
             ) : products.length === 0 ? (
               <div className="text-center py-16">
@@ -325,7 +325,7 @@ const ProductsPage = () => {
                               onClick={() => setCurrentPage(page)}
                               className={`px-4 py-2 rounded-lg ${
                                 currentPage === page
-                                  ? "bg-primary-600 text-white"
+                                  ? "bg-[#8f5c35] text-white"
                                   : "border border-gray-300 hover:bg-gray-50"
                               }`}
                             >

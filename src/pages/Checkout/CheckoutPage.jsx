@@ -334,18 +334,18 @@ const CheckoutPage = () => {
 
                 <div className="space-y-4">
                   {/* Razorpay */}
-                  <label className="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:border-primary-600 transition-colors">
+                  <label className="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:border-[#b7521d] transition-colors">
                     <input
                       type="radio"
                       name="paymentMethod"
                       value="razorpay"
                       checked={paymentMethod === "razorpay"}
                       onChange={(e) => setPaymentMethod(e.target.value)}
-                      className="w-5 h-5 text-primary-600"
+                      className="w-5 h-5 text-[#b7521d]"
                     />
                     <div className="ml-4 flex-1">
                       <div className="flex items-center space-x-3">
-                        <FiCreditCard size={24} className="text-primary-600" />
+                        <FiCreditCard size={24} className="text-[#b7521d]" />
                         <div>
                           <div className="font-semibold text-gray-900">
                             Credit/Debit Card, UPI, Net Banking
@@ -359,18 +359,18 @@ const CheckoutPage = () => {
                   </label>
 
                   {/* Cash on Delivery */}
-                  <label className="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:border-primary-600 transition-colors">
+                  <label className="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:border-[#b7521d] transition-colors">
                     <input
                       type="radio"
                       name="paymentMethod"
                       value="cod"
                       checked={paymentMethod === "cod"}
                       onChange={(e) => setPaymentMethod(e.target.value)}
-                      className="w-5 h-5 text-primary-600"
+                      className="w-5 h-5 text-[#b7521d]"
                     />
                     <div className="ml-4 flex-1">
                       <div className="flex items-center space-x-3">
-                        <FiCheckCircle size={24} className="text-primary-600" />
+                        <FiCheckCircle size={24} className="text-[#b7521d]" />
                         <div>
                           <div className="font-semibold text-gray-900">
                             Cash on Delivery
@@ -457,7 +457,7 @@ const CheckoutPage = () => {
                       <span className="text-lg font-semibold text-gray-900">
                         Total
                       </span>
-                      <span className="text-2xl font-bold text-primary-700">
+                      <span className="text-2xl font-bold text-[#8f3c19]">
                         ₹{total}
                       </span>
                     </div>

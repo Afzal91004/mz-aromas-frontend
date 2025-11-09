@@ -61,7 +61,7 @@ const OrderDetailPage = () => {
     return (
       <div className="container mx-auto px-4 py-16">
         <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-primary-600"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#b7521d]"></div>
         </div>
       </div>
     );
@@ -118,7 +118,7 @@ const OrderDetailPage = () => {
                       <div
                         className={`w-10 h-10 rounded-full flex items-center justify-center ${
                           step.completed
-                            ? "bg-primary-600 text-white"
+                            ? "bg-[#b7521d] text-white"
                             : "bg-gray-200 text-gray-500"
                         }`}
                       >
@@ -126,7 +126,7 @@ const OrderDetailPage = () => {
                       </div>
                       <p
                         className={`mt-2 text-sm font-medium ${
-                          step.completed ? "text-primary-600" : "text-gray-500"
+                          step.completed ? "text-[#b7521d]" : "text-gray-500"
                         }`}
                       >
                         {step.name}
@@ -135,7 +135,7 @@ const OrderDetailPage = () => {
                     {index < statusSteps.length - 1 && (
                       <div
                         className={`flex-1 h-1 ${
-                          step.completed ? "bg-primary-600" : "bg-gray-200"
+                          step.completed ? "bg-[#b7521d]" : "bg-gray-200"
                         }`}
                       />
                     )}
@@ -279,7 +279,7 @@ const OrderDetailPage = () => {
                     <span className="text-lg font-semibold text-gray-900">
                       Total
                     </span>
-                    <span className="text-2xl font-bold text-primary-700">
+                    <span className="text-2xl font-bold text-[#8f3c19]">
                       ₹{order.totalPrice}
                     </span>
                   </div>

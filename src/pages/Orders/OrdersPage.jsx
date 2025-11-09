@@ -45,7 +45,7 @@ const OrdersPage = () => {
     return (
       <div className="container mx-auto px-4 py-16">
         <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-primary-600"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#b7521d]"></div>
         </div>
       </div>
     );
@@ -64,7 +64,7 @@ const OrdersPage = () => {
           </p>
           <Link
             to="/products"
-            className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            className="inline-block bg-[#b7521d] hover:bg-[#8f3c19] text-white px-8 py-3 rounded-lg font-semibold transition-colors"
           >
             Start Shopping
           </Link>
@@ -158,7 +158,7 @@ const OrdersPage = () => {
                       <div className="text-sm text-gray-600 mb-1">
                         Total Amount
                       </div>
-                      <div className="text-2xl font-bold text-primary-700">
+                      <div className="text-2xl font-bold text-[#8f3c19]">
                         ₹{order.totalPrice}
                       </div>
                     </div>

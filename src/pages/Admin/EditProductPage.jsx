@@ -150,7 +150,7 @@ const EditProductPage = () => {
   if (fetching) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-primary-600"></div>
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#b7521d]"></div>
       </div>
     );
   }
@@ -530,7 +530,7 @@ const EditProductPage = () => {
                     name="featured"
                     checked={formData.featured}
                     onChange={handleChange}
-                    className="w-5 h-5 text-primary-600 rounded"
+                    className="w-5 h-5 text-[#b7521d] rounded"
                   />
                   <span className="text-gray-700">Featured Product</span>
                 </label>
@@ -541,7 +541,7 @@ const EditProductPage = () => {
                     name="isActive"
                     checked={formData.isActive}
                     onChange={handleChange}
-                    className="w-5 h-5 text-primary-600 rounded"
+                    className="w-5 h-5 text-[#b7521d] rounded"
                   />
                   <span className="text-gray-700">Active Status</span>
                 </label>

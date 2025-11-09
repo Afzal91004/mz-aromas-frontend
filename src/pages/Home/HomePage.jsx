@@ -37,10 +37,10 @@ const HomePage = () => {
         >
           {/* Slide 1 */}
           <SwiperSlide>
-            <div className="relative h-full bg-gradient-to-r from-primary-100 to-primary-50">
+            <div className="relative h-full bg-gradient-to-r from-[#f5efe8] to-[#faf7f4]">
               <div className="container mx-auto px-4 h-full flex items-center">
                 <div className="max-w-xl">
-                  <h1 className="text-5xl md:text-6xl font-display font-bold text-primary-900 mb-4">
+                  <h1 className="text-5xl md:text-6xl font-display font-bold text-[#4d2f1f] mb-4">
                     Pure Natural Attars
                   </h1>
                   <p className="text-xl text-gray-700 mb-8">
@@ -49,7 +49,7 @@ const HomePage = () => {
                   </p>
                   <Link
                     to="/products?category=attar"
-                    className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+                    className="inline-block bg-[#8f5c35] hover:bg-[#77492c] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
                   >
                     Shop Attars
                   </Link>
@@ -109,8 +109,8 @@ const HomePage = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="flex items-center space-x-4">
-              <div className="bg-primary-100 p-4 rounded-full">
-                <FiTruck className="text-primary-600" size={32} />
+              <div className="bg-[#f5efe8] p-4 rounded-full">
+                <FiTruck className="text-[#8f5c35]" size={32} />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">Free Shipping</h3>
@@ -170,7 +170,7 @@ const HomePage = () => {
                 to={`/products?category=${category.slug}`}
                 className="card p-6 text-center hover:shadow-xl transition-all group"
               >
-                <div className="w-20 h-20 mx-auto mb-4 bg-primary-100 rounded-full flex items-center justify-center group-hover:bg-primary-200 transition-colors">
+                <div className="w-20 h-20 mx-auto mb-4 bg-[#f5efe8] rounded-full flex items-center justify-center group-hover:bg-[#e8dac7] transition-colors">
                   <span className="text-3xl">
                     {category.name === "Attar" && "🌸"}
                     {category.name === "Agarbatti" && "🪔"}
@@ -192,7 +192,7 @@ const HomePage = () => {
                     ].includes(category.name) && "✨"}
                   </span>
                 </div>
-                <h3 className="font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
+                <h3 className="font-semibold text-gray-900 group-hover:text-[#8f5c35] transition-colors">
                   {category.name}
                 </h3>
                 <p className="text-xs text-gray-500 mt-1">
@@ -218,7 +218,7 @@ const HomePage = () => {
             </div>
             <Link
               to="/products"
-              className="hidden md:inline-block text-primary-600 hover:text-primary-700 font-semibold"
+              className="hidden md:inline-block text-[#8f5c35] hover:text-[#77492c] font-semibold"
             >
               View All →
             </Link>
@@ -233,7 +233,7 @@ const HomePage = () => {
           <div className="text-center mt-8 md:hidden">
             <Link
               to="/products"
-              className="inline-block text-primary-600 hover:text-primary-700 font-semibold"
+              className="inline-block text-[#8f5c35] hover:text-[#77492c] font-semibold"
             >
               View All Products →
             </Link>
@@ -242,7 +242,7 @@ const HomePage = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-primary-50">
+      <section className="py-16 bg-[#faf7f4]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
@@ -282,13 +282,13 @@ const HomePage = () => {
       </section>
 
       {/* Newsletter */}
-      <section className="py-16 bg-primary-700 text-white">
+      <section className="py-16 bg-[#77492c] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-display font-bold mb-4">
               Subscribe to Our Newsletter
             </h2>
-            <p className="text-primary-100 mb-8">
+            <p className="text-[#f5efe8] mb-8">
               Get exclusive offers, new product updates, and aromatic tips
               delivered to your inbox
             </p>

@@ -55,7 +55,9 @@ const DashboardPage = () => {
       title: "Total Revenue",
       value: `₹${stats.totalRevenue.toLocaleString()}`,
       icon: FiDollarSign,
-      color: "bg-green-500",
+      gradient: "from-green-500 to-emerald-600",
+      bgLight: "bg-green-50",
+      textColor: "text-green-600",
       trend: "+12.5%",
       trendUp: true,
     },
@@ -63,7 +65,9 @@ const DashboardPage = () => {
       title: "Total Orders",
       value: stats.totalOrders,
       icon: FiPackage,
-      color: "bg-blue-500",
+      gradient: "from-blue-500 to-blue-600",
+      bgLight: "bg-blue-50",
+      textColor: "text-blue-600",
       trend: "+8.2%",
       trendUp: true,
     },
@@ -71,7 +75,9 @@ const DashboardPage = () => {
       title: "Total Products",
       value: stats.totalProducts,
       icon: FiShoppingBag,
-      color: "bg-purple-500",
+      gradient: "from-[#8f3c19] to-[#6d2f15]",
+      bgLight: "bg-[#fdf4ec]",
+      textColor: "text-[#8f3c19]",
       trend: "+5.4%",
       trendUp: true,
     },
@@ -79,7 +85,9 @@ const DashboardPage = () => {
       title: "Total Users",
       value: stats.totalUsers,
       icon: FiUsers,
-      color: "bg-orange-500",
+      gradient: "from-orange-500 to-orange-600",
+      bgLight: "bg-orange-50",
+      textColor: "text-orange-600",
       trend: "-2.1%",
       trendUp: false,
     },
@@ -88,13 +96,13 @@ const DashboardPage = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-primary-600"></div>
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#8f3c19]"></div>
       </div>
     );
   }
 
   return (
-    <div>
+    <div className="space-y-6">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-display font-bold text-gray-900 mb-2">
@@ -106,29 +114,36 @@ const DashboardPage = () => {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {statCards.map((stat, index) => {
           const Icon = stat.icon;
           const TrendIcon = stat.trendUp ? FiTrendingUp : FiTrendingDown;
 
           return (
-            <div key={index} className="bg-white rounded-xl shadow-sm p-6">
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100"
+            >
               <div className="flex items-center justify-between mb-4">
-                <div className={`${stat.color} p-3 rounded-lg`}>
-                  <Icon className="text-white" size={24} />
+                <div className={`${stat.bgLight} p-4 rounded-xl shadow-sm`}>
+                  <Icon className={stat.textColor} size={28} />
                 </div>
                 <div
-                  className={`flex items-center space-x-1 text-sm ${
+                  className={`flex items-center space-x-1 text-sm font-semibold ${
                     stat.trendUp ? "text-green-600" : "text-red-600"
                   }`}
                 >
-                  <TrendIcon size={16} />
+                  <TrendIcon size={18} />
                   <span>{stat.trend}</span>
                 </div>
               </div>
               <div>
-                <p className="text-gray-600 text-sm mb-1">{stat.title}</p>
-                <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
+                <p className="text-gray-600 text-sm mb-1 font-medium">
+                  {stat.title}
+                </p>
+                <p className="text-2xl lg:text-3xl font-bold text-gray-900">
+                  {stat.value}
+                </p>
               </div>
             </div>
           );
@@ -136,34 +151,35 @@ const DashboardPage = () => {
       </div>
 
       {/* Recent Orders */}
-      <div className="bg-white rounded-xl shadow-sm p-6">
-        <div className="flex items-center justify-between mb-6">
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
+        <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-gradient-to-r from-[#fdf4ec] to-white">
           <h2 className="text-xl font-semibold text-gray-900">Recent Orders</h2>
           <Link
             to="/admin/orders"
-            className="text-primary-600 hover:text-primary-700 font-medium text-sm"
+            className="text-[#8f3c19] hover:text-[#6d2f15] font-semibold text-sm transition-colors inline-flex items-center space-x-1"
           >
-            View All →
+            <span>View All</span>
+            <span>→</span>
           </Link>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead>
+            <thead className="bg-gray-50">
               <tr className="border-b border-gray-200">
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">
+                <th className="text-left py-4 px-6 text-sm font-semibold text-gray-700">
                   Order ID
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">
+                <th className="text-left py-4 px-6 text-sm font-semibold text-gray-700">
                   Customer
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">
+                <th className="text-left py-4 px-6 text-sm font-semibold text-gray-700">
                   Status
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">
+                <th className="text-left py-4 px-6 text-sm font-semibold text-gray-700">
                   Amount
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">
+                <th className="text-left py-4 px-6 text-sm font-semibold text-gray-700">
                   Date
                 </th>
               </tr>
@@ -172,19 +188,21 @@ const DashboardPage = () => {
               {stats.recentOrders.map((order) => (
                 <tr
                   key={order._id}
-                  className="border-b border-gray-100 hover:bg-gray-50"
+                  className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
                 >
-                  <td className="py-3 px-4">
-                    <span className="font-medium text-gray-900">
+                  <td className="py-4 px-6">
+                    <span className="font-semibold text-gray-900">
                       #{order._id.slice(-8)}
                     </span>
                   </td>
-                  <td className="py-3 px-4 text-gray-700">
-                    {order.user?.name || "N/A"}
+                  <td className="py-4 px-6">
+                    <span className="text-gray-700 font-medium">
+                      {order.user?.name || "N/A"}
+                    </span>
                   </td>
-                  <td className="py-3 px-4">
+                  <td className="py-4 px-6">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold ${
                         order.orderStatus === "Delivered"
                           ? "bg-green-100 text-green-800"
                           : order.orderStatus === "Shipped"
@@ -195,11 +213,17 @@ const DashboardPage = () => {
                       {order.orderStatus}
                     </span>
                   </td>
-                  <td className="py-3 px-4 font-semibold text-gray-900">
-                    ₹{order.totalPrice}
+                  <td className="py-4 px-6">
+                    <span className="font-bold text-gray-900">
+                      ₹{order.totalPrice.toLocaleString()}
+                    </span>
                   </td>
-                  <td className="py-3 px-4 text-gray-600 text-sm">
-                    {new Date(order.createdAt).toLocaleDateString()}
+                  <td className="py-4 px-6 text-gray-600 text-sm">
+                    {new Date(order.createdAt).toLocaleDateString("en-IN", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    })}
                   </td>
                 </tr>
               ))}
